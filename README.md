@@ -4,6 +4,8 @@ Provides a boost to your go development.
 
 Currently the only feature is autocomplete for the tendious if err != nil. Hopefully this a bit more useful/less work than a snippet.
 
+https://marketplace.visualstudio.com/items?itemName=neibla.go-boost
+
 ## Release Notes
 
 ### 0.0.1
