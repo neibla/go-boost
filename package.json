@@ -2,7 +2,7 @@
   "name": "go-boost",
 	"displayName": "Go Boost",
 	"description": "Helps automate writing go.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "neibla",
 	"author": {
 	  "name": "Neil Blake",
@@ -23,6 +23,8 @@
 	"keywords": [
 		"go",
 		"golang",
+		"go boost",
+		"golang boost",
 		"iferr",
 		"if err",
 		"snippets",
@@ -34,7 +36,7 @@
         "*"
 	],
 	"main": "./out/extension.js",
-	"icon": "images/iferr.png",
+	"icon": "images/icon.png",
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
