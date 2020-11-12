@@ -11,6 +11,9 @@ https://marketplace.visualstudio.com/items?itemName=neibla.go-boost
 
 ## Release Notes
 
+### 0.0.4
+GIF
+
 ### 0.0.3
 Added "i" trigger, snippet and swaped order. 
 
