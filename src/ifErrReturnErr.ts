@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 
+
 function getIfErrWithDefaults(document: vscode.TextDocument, position: vscode.Position) {
     let funcPosition = position.translate(-1);
     while (funcPosition.line > 0 && !document.lineAt(funcPosition).text.startsWith('func')) {
@@ -34,6 +35,7 @@ function getIfErrWithDefaults(document: vscode.TextDocument, position: vscode.Po
     return new vscode.CompletionItem(`if err != nil {\n\treturn ${defaults.join(", ")}\n}`);
 }
 
+
 const ifErrReturnErr = vscode.languages.registerCompletionItemProvider('go', {
 
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
@@ -44,20 +46,22 @@ const ifErrReturnErr = vscode.languages.registerCompletionItemProvider('go', {
         	return;
         }
 
-        const namedParamReturn = new vscode.CompletionItem('if err != nil {\n\treturn\n}');
-        namedParamReturn.preselect=true;
-        namedParamReturn.kind=vscode.CompletionItemKind.Method;
-
         const completionWithDefaults = getIfErrWithDefaults(document, previousLine);
         
-        const completions = [namedParamReturn];
+        const completions = [];
 
         if (!!completionWithDefaults) {
+            completionWithDefaults.preselect=true;
+            completionWithDefaults.kind=vscode.CompletionItemKind.Method;
         	completions.push(completionWithDefaults);
         }
 
+        const namedParamReturn = new vscode.CompletionItem('if err != nil {\n\treturn\n}');
+
+        completions.push(namedParamReturn);
+
         return completions;
     }
-},'\n');
+},'\n', 'i');
 
 export default ifErrReturnErr;

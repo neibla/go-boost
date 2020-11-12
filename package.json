@@ -2,7 +2,7 @@
   "name": "go-boost",
 	"displayName": "Go Boost",
 	"description": "Helps automate writing go.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "neibla",
 	"author": {
 	  "name": "Neil Blake",
@@ -20,10 +20,19 @@
 	"categories": [
 		"Other"
 	],
+	"contributes": {
+		"snippets": [
+		  {
+			"language": "go",
+			"path": "./snippets/snippets.json"
+		  }
+		  ]
+		},
 	"keywords": [
 		"go",
 		"golang",
 		"go boost",
+		"goboost",
 		"golang boost",
 		"iferr",
 		"if err",
