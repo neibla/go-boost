@@ -39,11 +39,11 @@ function getIfErrWithDefaults(document: vscode.TextDocument, position: vscode.Po
 const ifErrReturnErr = vscode.languages.registerCompletionItemProvider('go', {
 
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
-
         const previousLine = position.translate(-1);
         const previousLineIncludesErr = document.lineAt(previousLine).text.includes("err");
+        
         if (!previousLineIncludesErr) {
-        	return;
+        	return [];
         }
 
         const completionWithDefaults = getIfErrWithDefaults(document, previousLine);
@@ -62,6 +62,6 @@ const ifErrReturnErr = vscode.languages.registerCompletionItemProvider('go', {
 
         return completions;
     }
-},'\n', 'i');
+}, 'i');
 
 export default ifErrReturnErr;

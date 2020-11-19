@@ -11,6 +11,9 @@ https://marketplace.visualstudio.com/items?itemName=neibla.go-boost
 
 ## Release Notes
 
+### 0.0.5
+Reduced autocomplete trigger to "i" as with it was a bit annoying with returning no suggestions still made it open the snippets via registerCompletionItemProvider... 
+
 ### 0.0.4
 GIF
 
