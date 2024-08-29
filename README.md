@@ -1,3 +1,5 @@
+This is now obsolute, just use https://cursor.sh copilot or supermaven instead 
+
 # Go Boost
 Provides a boost to your go development. 
 
